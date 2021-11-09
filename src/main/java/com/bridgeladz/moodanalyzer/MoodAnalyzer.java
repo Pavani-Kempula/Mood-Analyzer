@@ -21,6 +21,11 @@ public class MoodAnalyzer {
         super();
         this.userMessage = userMessage;
     }
+
+    public String analyzeMood() {
+        return analyzeMood(userMessage);
+    }
+
     /**
      * Name : analyzeMood
      *
@@ -33,9 +38,10 @@ public class MoodAnalyzer {
      * then returning the respective matching string i.e., either happy or sad.
      */
     public String analyzeMood(String userMessage) {
-        if (userMessage.contains("sad")) {
+        if(userMessage.contains("sad")) {
             return "sad";
-        } else {
+        }
+        else {
             return "happy";
         }
     }

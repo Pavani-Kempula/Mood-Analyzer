@@ -9,6 +9,18 @@ package com.bridgeladz.moodanalyzer;
  ****************************************************************************************/
 
 public class MoodAnalyzer {
+    public String userMessage;
+
+    //non parameterized constructor
+    public MoodAnalyzer() {
+        super();
+    }
+
+    //parameterized constructor
+    public MoodAnalyzer(String userMessage) {
+        super();
+        this.userMessage = userMessage;
+    }
     /**
      * Name : analyzeMood
      *
@@ -18,13 +30,12 @@ public class MoodAnalyzer {
      * @return //happy or sad.
      *
      * Algorithm : If user given message has happy or sad written in it.
-     * then returning the respective matching string i.e.,either happy or sad.
+     * then returning the respective matching string i.e., either happy or sad.
      */
     public String analyzeMood(String userMessage) {
-        if(userMessage.contains("sad")) {
+        if (userMessage.contains("sad")) {
             return "sad";
-        }
-        else {
+        } else {
             return "happy";
         }
     }

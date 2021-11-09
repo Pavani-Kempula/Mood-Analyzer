@@ -7,7 +7,12 @@ package com.bridgeladz.moodanalyzer;
  */
 
 public class MoodAnalysisException extends RuntimeException {
-    public MoodAnalysisException(String message) {
+    public enum ExceptionType {
+        GIVEN_NULL, GIVEN_EMPTY
+    }
+
+    public ExceptionType type;
+    public MoodAnalysisException(ExceptionType givenEmpty, String message) {
         super(message);
     }
 }

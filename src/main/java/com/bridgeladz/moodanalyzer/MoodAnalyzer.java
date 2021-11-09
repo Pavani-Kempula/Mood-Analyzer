@@ -43,16 +43,18 @@ public class MoodAnalyzer {
      * then returning the respective matching string i.e., either happy or sad.
      */
     public String analyzeMood(String userMessage) throws MoodAnalysisException {
-        try {
-            if(userMessage.contains("sad")) {
-                return "sad";
+            try {
+                if (userMessage.length() == 0) {
+                    throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.GIVEN_EMPTY, "Message can not be empty.");
+                }
+                if (userMessage.contains("sad")) {
+                    return "sad";
+                } else {
+                    return "happy";
+                }
             }
-            else {
-                return "happy";
+            catch (NullPointerException e) {
+                throw new MoodAnalysisException(MoodAnalysisException.ExceptionType.GIVEN_EMPTY, "Message can not be null.");
             }
-        }
-        catch (NullPointerException e) {
-            throw new MoodAnalysisException("Message can not be null.");
-        }
     }
 }

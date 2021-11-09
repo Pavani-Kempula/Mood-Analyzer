@@ -18,7 +18,7 @@ public class MoodAnalyzer {
      * @return //happy or sad.
      *
      * Algorithm : If user given message has happy or sad written in it.
-     * then returning the respective matching string i.e., either happy or sad.
+     * then returning the respective matching string i.e.,either happy or sad.
      */
     public String analyzeMood(String userMessage) {
         if(userMessage.contains("sad")) {

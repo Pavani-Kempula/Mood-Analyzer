@@ -42,7 +42,7 @@ public class MoodAnalyzer {
      * Algorithm : If user given message has happy or sad written in it.
      * then returning the respective matching string i.e., either happy or sad.
      */
-    public String analyzeMood(String userMessage) {
+    public String analyzeMood(String userMessage) throws MoodAnalysisException {
         try {
             if(userMessage.contains("sad")) {
                 return "sad";
@@ -52,7 +52,7 @@ public class MoodAnalyzer {
             }
         }
         catch (NullPointerException e) {
-            return "happy";
+            throw new MoodAnalysisException("Message can not be null.");
         }
     }
 }

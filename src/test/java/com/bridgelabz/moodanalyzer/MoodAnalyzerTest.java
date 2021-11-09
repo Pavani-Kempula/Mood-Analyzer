@@ -1,5 +1,6 @@
 package com.bridgelabz.moodanalyzer;
 
+import com.bridgeladz.moodanalyzer.MoodAnalysisException;
 import com.bridgeladz.moodanalyzer.MoodAnalyzer;
 import org.junit.Test;
 
@@ -40,5 +41,16 @@ public class MoodAnalyzerTest {
     public void givenUserMessageInConstructor_whenNull_shouldReturnHappy() {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
         assertEquals("happy",moodAnalyzer.analyzeMood());
+    }
+
+    @Test
+    public void givenMessageInConstructor_whenNull_shouldReturnHappy() {
+        try {
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
+            assertEquals("happy",moodAnalyzer.analyzeMood());
+        }
+        catch (MoodAnalysisException e) {
+            assertEquals("Message can not be null.",e.getMessage());
+        }
     }
 }

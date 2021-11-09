@@ -25,16 +25,20 @@ public class MoodAnalyzerTest {
     }
 
     @Test
-    public void givenUserMessageInConstructor_whenIAmInSadMood_shouldReturnSad()
-    {
+    public void givenUserMessageInConstructor_whenIAmInSadMood_shouldReturnSad() {
         MoodAnalyzer moodAnalyser = new MoodAnalyzer("i am in sad mood");
         assertEquals("sad",moodAnalyser.analyzeMood());
     }
 
     @Test
-    public void givenUserMessageInConstructor_whenIAmInHappyMood_shouldReturnHappy()
-    {
+    public void givenUserMessageInConstructor_whenIAmInHappyMood_shouldReturnHappy() {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer("i am in happy mood");
+        assertEquals("happy",moodAnalyzer.analyzeMood());
+    }
+
+    @Test
+    public void givenUserMessageInConstructor_whenNull_shouldReturnHappy() {
+        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
         assertEquals("happy",moodAnalyzer.analyzeMood());
     }
 }

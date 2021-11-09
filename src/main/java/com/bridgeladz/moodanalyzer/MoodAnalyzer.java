@@ -9,40 +9,41 @@ package com.bridgeladz.moodanalyzer;
  ****************************************************************************************/
 
 public class MoodAnalyzer {
-        public String userMessage;
+    public String userMessage;
 
-        //non parameterized constructor
-        public MoodAnalyzer() {
-            super();
-        }
+    //non parameterized constructor
+    public MoodAnalyzer() {
+        super();
+    }
 
-        //parameterized constructor
-        public MoodAnalyzer(String userMessage) {
-            super();
-            this.userMessage = userMessage;
-        }
+    //parameterized constructor
+    public MoodAnalyzer(String userMessage) {
+        super();
+        this.userMessage = userMessage;
+    }
 
-        /**
-         * Name : analyseMood
-         *
-         * Description : This method calls parameterized analyseMood() method.
-         */
-        public String analyzeMood() {
-            return analyzeMood(userMessage);
-        }
+    /**
+     * Name : analyzeMood
+     *
+     * Description : This method calls parameterized analyseMood() method.
+     */
+    public String analyzeMood() {
+        return analyzeMood(userMessage);
+    }
 
-        /**
-         * Name : analyzeMood
-         *
-         * Description : Analyzing mood happy or sad.
-         *
-         * @param userMessage //user given message.
-         * @return //happy or sad.
-         *
-         * Algorithm : If user given message has happy or sad written in it.
-         * then returning the respective matching string i.e., either happy or sad.
-         */
-        public String analyzeMood(String userMessage) {
+    /**
+     * Name : analyzeMood
+     *
+     * Description : Analyzing mood happy or sad.
+     *
+     * @param userMessage //user given message.
+     * @return //happy or sad.
+     *
+     * Algorithm : If user given message has happy or sad written in it.
+     * then returning the respective matching string i.e., either happy or sad.
+     */
+    public String analyzeMood(String userMessage) {
+        try {
             if(userMessage.contains("sad")) {
                 return "sad";
             }
@@ -50,4 +51,8 @@ public class MoodAnalyzer {
                 return "happy";
             }
         }
+        catch (NullPointerException e) {
+            return "happy";
+        }
+    }
 }
